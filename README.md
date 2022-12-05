@@ -40,3 +40,14 @@ vim ~/.bash_profile
 brew update
 ```
 
+快捷的代理设置
+> 这里主要是配合 brew 使用，虽然使用了镜像，但是很多时候还是会从 github 拉取数据；新版的 macOS brew 里没有 proxychains 之类的东西了
+
+```bash
+vim ~/.zshrc
+
+alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+alias unproxy='unset all_proxy'
+```
+
+如何使用：在使用 `brew` 命令前先执行 `proxy` 命令，使用完在执行 `unproxy`
